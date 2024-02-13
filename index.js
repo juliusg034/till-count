@@ -14,7 +14,9 @@ function depositAmount(deposit, denomination, amount){
 
 }
 
-function getValues() {
+function getValues(event) {
+  event.preventDefault();
+
   const hundreds = parseFloat(document.getElementById('hundreds').value);
   const fifties = parseFloat(document.getElementById('fifties').value);
   const twenties = parseFloat(document.getElementById('twenties').value);
@@ -22,6 +24,38 @@ function getValues() {
   const fives = parseFloat(document.getElementById('fives').value);
   const ones = parseFloat(document.getElementById('ones').value);
   const coins = parseFloat(document.getElementById('coins').value);
+
+  let isValid = true;
+
+  const inputs = document.querySelectorAll('.bill-input');
+
+  inputs.forEach(input => {
+    const denomination = parseInt(input.getAttribute('data-denomination'));
+    const value = parseFloat(input.value);
+
+    if (isNaN(value) || value % denomination !== 0) {
+      input.classList.add('input-error');
+      isValid = false;
+    } else {
+      input.classList.remove('input-error');
+    }
+  });
+
+  const errorMessage = document.getElementById('error-message');
+
+  if (!isValid) {
+    errorMessage.style.display = 'block';
+    return; // Exit the function if there are input errors
+  } else {
+    errorMessage.style.display = 'none';
+  }  
+
+  if (!isValid) {
+    console.log("There are errors in the input. Please correct them.");
+    return; // Exit the function if there are input errors
+  }
+
+  // Proceed with the rest of the function if inputs are valid
 
   let totalsum = hundreds + fifties + twenties + tens + fives + ones + coins; 
   let deposit = {amount: totalsum - 300};
@@ -32,20 +66,12 @@ function getValues() {
   let amountHundreds = hundreds / 100
   let amountOnes = ones / 1
 
-  console.log(deposit.amount)
   depositHundreds = depositAmount(deposit, 100, amountHundreds);
-  console.log(deposit.amount)
   depositFifties = depositAmount(deposit, 50, amountFifties);
-  console.log(deposit.amount)
   depositTwenties = depositAmount(deposit, 20, amountTwenties);
-  console.log(deposit.amount)
   depositTens = depositAmount(deposit, 10, amountTens);
-  console.log(deposit.amount)
   depositFives = depositAmount(deposit, 5, amountFives);
-  console.log(deposit.amount)
   depositOnes = depositAmount(deposit, 1, amountOnes);  
-  console.log(deposit.amount)
-
 
   const part1 = document.getElementById('deposit1');
   const part2 = document.getElementById('deposit2');
@@ -70,4 +96,10 @@ function getValues() {
 }
 
 
-
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('billForm');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+    getValues(event); // Call your function to handle form submission
+  });
+});

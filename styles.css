@@ -84,3 +84,8 @@ form {
   align-self: center;
   margin-top: 10px;
 }
+
+
+.input-error {
+  border-color: red;
+}
