@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./index.js" defer></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="content-wrapper">
+
+    <h1 class="title">Deposit Calculator</h1>
+
+    <form action="#">
+      <div class="bills">
+        <div class="input-field">
+          <label for="number">$100</label>
+          <input id="hundreds"/>
+        </div>
+        
+        <div class="input-field">
+          <label for="number">$50</label>
+          <input id="fifties"/>
+        </div>
+        
+        <div class="input-field">
+          <label for="number">$20</label>
+          <input id="twenties"/>
+        </div>
+        
+        <div class="input-field">
+          <label for="number">$10</label>
+          <input id="tens"/>
+        </div>
+        
+        <div class="input-field">
+          <label for="number">$5</label>
+          <input id="fives"/>
+        </div>
+        
+        <div class="input-field">
+          <label for="number">$1</label>
+          <input id="ones"/>
+        </div>
+        
+        <div class="input-field">
+          <label for="number">coins</label>
+          <input id="coins"/>
+        </div>
+        <button onclick="getValues()" type="submit" id="btn">Submit</button>
+      </div>
+    </form>
+
+    <div class="deposit-amount">
+      <p id="deposit1"></p>
+      <p id="deposit2"></p>
+      <p id="deposit3"></p>
+      <p id="deposit4"></p>
+      <p id="deposit5"></p>
+      <p id="deposit6"></p>
+    </div>
+
+
+
+  </div>  
+</body>
+</html>
