@@ -14,6 +14,18 @@ function depositAmount(deposit, denomination, amount){
 
 }
 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('billForm');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+    getValues(event); // Call your function to handle form submission
+  });
+});
+
+
+
 function getValues(event) {
   event.preventDefault();
 
@@ -94,12 +106,3 @@ function getValues(event) {
   const depositList = document.getElementById('depositList');
   depositList.style.display = 'block';
 }
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('billForm');
-  form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
-    getValues(event); // Call your function to handle form submission
-  });
-});
