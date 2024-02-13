@@ -11,7 +11,7 @@
   <div class="content-wrapper">
 
     <h1 class="title">Deposit Calculator</h1>
-
+    <h3 class="description">Enter the value you have for the bills for each <br> denomination then click to refresh your total deposit</h3>
     <form action="#">
       <div class="bills">
         <div class="input-field">
@@ -48,17 +48,19 @@
           <label for="number">coins</label>
           <input id="coins"/>
         </div>
-        <button onclick="getValues()" type="submit" id="btn">Submit</button>
+        <button onclick="getValues()" type="submit" id="btn">Refresh</button>
       </div>
     </form>
 
-    <div class="deposit-amount">
+    <div class="deposit-amount" id="depositList">
       <p id="deposit1"></p>
       <p id="deposit2"></p>
       <p id="deposit3"></p>
       <p id="deposit4"></p>
       <p id="deposit5"></p>
       <p id="deposit6"></p>
+      <p id="deposit7"></p>
+      <p id="deposit8"></p>
     </div>
 
 

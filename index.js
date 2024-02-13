@@ -1,13 +1,13 @@
 function depositAmount(deposit, denomination, amount){
-  if(amount === 0){return [deposit, 0]}
-  else if (deposit === 0) {return  0}
+  if(amount === 0){return 0}
+  else if (deposit.amount === 0) {return  0}
   else if (amount > 0){
-    let maxAmount = Math.floor(deposit/denomination);
+    let maxAmount = Math.floor(deposit.amount/denomination);
     if(maxAmount > amount){
-      deposit = deposit - (amount * denomination);
+      deposit.amount = deposit.amount - (amount * denomination);
       return  amount;
-    } else if (maxAmount < amount){
-      deposit = deposit - (maxAmount * denomination);
+    } else if (maxAmount <= amount){
+      deposit.amount = deposit.amount - (maxAmount * denomination);
       return  maxAmount;
     }
   }
@@ -24,7 +24,7 @@ function getValues() {
   const coins = parseFloat(document.getElementById('coins').value);
 
   let totalsum = hundreds + fifties + twenties + tens + fives + ones + coins; 
-  let deposit = {amount: totalsum};
+  let deposit = {amount: totalsum - 300};
   let amountFives = fives / 5
   let amountTens = tens / 10
   let amountTwenties = twenties / 20
@@ -32,12 +32,19 @@ function getValues() {
   let amountHundreds = hundreds / 100
   let amountOnes = ones / 1
 
-  depositHundreds = depositAmount(deposit.amount, 100, amountHundreds);
-  depositFifties = depositAmount(deposit.amount, 50, amountFifties);
-  depositTwenties = depositAmount(deposit.amount, 20, amountTwenties);
-  depositTens = depositAmount(deposit.amount, 10, amountTens);
-  depositFives = depositAmount(deposit.amount, 5, amountFives);
-  depositOnes = depositAmount(deposit.amount, 1, amountOnes);  
+  console.log(deposit.amount)
+  depositHundreds = depositAmount(deposit, 100, amountHundreds);
+  console.log(deposit.amount)
+  depositFifties = depositAmount(deposit, 50, amountFifties);
+  console.log(deposit.amount)
+  depositTwenties = depositAmount(deposit, 20, amountTwenties);
+  console.log(deposit.amount)
+  depositTens = depositAmount(deposit, 10, amountTens);
+  console.log(deposit.amount)
+  depositFives = depositAmount(deposit, 5, amountFives);
+  console.log(deposit.amount)
+  depositOnes = depositAmount(deposit, 1, amountOnes);  
+  console.log(deposit.amount)
 
 
   const part1 = document.getElementById('deposit1');
@@ -47,16 +54,19 @@ function getValues() {
   const part5 = document.getElementById('deposit5');
   const part6 = document.getElementById('deposit6');
   const part7 = document.getElementById('deposit7');
+  const part8 = document.getElementById('deposit8');
 
-  part1.innerHTML = `The Deposit comes out to ${totalsum - 300}`
-  part2.innerHTML = `Deposit $${depositHundreds*100} hundreds.`;
-  part3.innerHTML = `Deposit $${depositFifties*50} fifties.`;
-  part4.innerHTML = `Deposit $${depositTwenties*20} twenties.`;
-  part5.innerHTML = `Deposit $${depositTens*10} tens.`;
-  part6.innerHTML = `Deposit $${depositFives*5} fives.`;
-  part7.innerHTML = `Deposit $${depositOnes} ones.`;
+  part1.innerHTML = `TOTAL = ${totalsum}`;
+  part2.innerHTML = `DEPOSIT = ${totalsum - 300}`;
+  part3.innerHTML = `${depositHundreds || 0} &nbsp;x $100`;
+  part4.innerHTML = `${depositFifties || 0} &nbsp;x $50`;
+  part5.innerHTML = `${depositTwenties || 0} &nbsp;x $20`;
+  part6.innerHTML = `${depositTens || 0} x $10`;
+  part7.innerHTML = `${depositFives || 0} x $5`;
+  part8.innerHTML = `${depositOnes || 0} x $1`;
 
-
+  const depositList = document.getElementById('depositList');
+  depositList.style.display = 'block';
 }
 
 
