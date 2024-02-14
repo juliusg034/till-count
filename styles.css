@@ -89,3 +89,38 @@ form {
 .input-error {
   border-color: red;
 }
+
+
+
+@media only screen and (max-width: 510px) {
+  * {
+    font-size: 16px;
+  }
+  .title {
+    font-size: 20px;
+  }  
+  .description {
+    font-size: 16px;
+  }
+  #btn {
+    font-size: 15px;
+  }
+  .input-field > input {
+    width: 50px;
+    margin-left: 0px;
+    font-size: 16px;
+  }
+  .content-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template: 10% 10% 70% 10% / 2% 48% 48% 2%;
+  justify-items: center;
+  }
+  form {
+    justify-self: left;
+    margin-left: 20px;
+  }
+
+
+}
