@@ -9,7 +9,17 @@
   color: var(--main-text);
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 
 .content-wrapper {
@@ -120,6 +130,42 @@ form {
   form {
     justify-self: left;
     margin-left: 20px;
+  }
+
+
+}
+@media only screen and (max-width: 400px) {
+  * {
+    font-size: 12px;
+  }
+  .title {
+    font-size: 16px;
+  }  
+  .description {
+    font-size: 12px;
+  }
+  #btn {
+    font-size: 10px;
+  }
+  .input-field > input {
+    width: 50px;
+    margin-left: 0px;
+    font-size: 12px;
+  }
+  .content-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template: 10% 10% 70% 10% / 2% 48% 48% 2%;
+  justify-items: center;
+  }
+  form {
+    justify-self: left;
+    margin-left: 20px;
+    margin-top: 30px;
+  }
+  #depositList {
+    margin-top: 30px;
   }
 
 
