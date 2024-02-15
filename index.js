@@ -95,7 +95,7 @@ function getValues(event) {
   const part8 = document.getElementById('deposit8');
 
   part1.innerHTML = `TOTAL = ${totalsum}`;
-  part2.innerHTML = `DEPOSIT = ${totalsum - 300}`;
+  part2.innerHTML = `DEPOSIT = ${Math.trunc(totalsum - 300)}`;
   part3.innerHTML = `${depositHundreds || 0} &nbsp;x $100`;
   part4.innerHTML = `${depositFifties || 0} &nbsp;x $50`;
   part5.innerHTML = `${depositTwenties || 0} &nbsp;x $20`;
