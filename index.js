@@ -93,15 +93,20 @@ function getValues(event) {
   const part6 = document.getElementById('deposit6');
   const part7 = document.getElementById('deposit7');
   const part8 = document.getElementById('deposit8');
+  const part9 = document.getElementById('deposit9');
 
-  part1.innerHTML = `TOTAL = ${totalsum}`;
-  part2.innerHTML = `DEPOSIT = ${Math.trunc(totalsum - 300)}`;
-  part3.innerHTML = `${depositHundreds || 0} &nbsp;x $100`;
-  part4.innerHTML = `${depositFifties || 0} &nbsp;x $50`;
-  part5.innerHTML = `${depositTwenties || 0} &nbsp;x $20`;
-  part6.innerHTML = `${depositTens || 0} x $10`;
-  part7.innerHTML = `${depositFives || 0} x $5`;
-  part8.innerHTML = `${depositOnes || 0} x $1`;
+  let endingTill = totalsum - Math.trunc(totalsum-300);
+  endingTill = endingTill.toFixed(2);
+
+  part1.innerHTML = `TOTAL = $${totalsum}`;
+  part2.innerHTML = `DEPOSIT = $${Math.trunc(totalsum - 300)}`;
+  part3.innerHTML = `ENDING TILL = $${endingTill}`;
+  part4.innerHTML = `${depositHundreds || 0} &nbsp;x $100`;
+  part5.innerHTML = `${depositFifties || 0} &nbsp;x $50`;
+  part6.innerHTML = `${depositTwenties || 0} &nbsp;x $20`;
+  part7.innerHTML = `${depositTens || 0} x $10`;
+  part8.innerHTML = `${depositFives || 0} x $5`;
+  part9.innerHTML = `${depositOnes || 0} x $1`;
 
   const depositList = document.getElementById('depositList');
   depositList.style.display = 'block';
