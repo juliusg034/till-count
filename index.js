@@ -95,6 +95,12 @@ function getValues(event) {
   const part8 = document.getElementById('deposit8');
   const part9 = document.getElementById('deposit9');
 
+  if(totalsum <= 300){
+    part1.innerHTML = `There is not enough for Deposit`;
+    const depositList = document.getElementById('depositList');
+    depositList.style.display = 'block'; 
+    return 0;
+  }
   let endingTill = totalsum - Math.trunc(totalsum-300);
   endingTill = endingTill.toFixed(2);
 
