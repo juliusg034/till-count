@@ -45,9 +45,22 @@
         </div>
         
         <div class="input-field">
-          <label for="number">coins</label>
-          <input type="number" type="text" inputmode="decimal" pattern="[0-9]*" id="coins"/>
+          <label for="number">25¢</label>
+          <input type="number" type="text" inputmode="decimal" pattern="[0-9]*" id="quarters"/>
         </div>
+        <div class="input-field">
+          <label for="number">10¢</label>
+          <input type="number" type="text" inputmode="decimal" pattern="[0-9]*" id="dimes"/>
+        </div>
+        <div class="input-field">
+          <label for="number">5¢</label>
+          <input type="number" type="text" inputmode="decimal" pattern="[0-9]*" id="nickels"/>
+        </div>
+        <div class="input-field">
+          <label for="number">1¢</label>
+          <input type="number" type="text" inputmode="decimal" pattern="[0-9]*" id="pennies"/>
+        </div>
+
         <button onclick="getValues(event)" type="submit" id="btn">Refresh</button>
       </div>
       <div id="error-message" class="error-message" style="display: none; margin-top: 20px;">There are errors in the input. Please correct them.</div>
