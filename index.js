@@ -39,6 +39,7 @@ function getValues(event) {
   const dimes = parseFloat(document.getElementById('dimes').value);
   const nickels = parseFloat(document.getElementById('nickels').value);
   const pennies = parseFloat(document.getElementById('pennies').value);
+  const setTill = parseFloat(document.getElementById('set-till').value);
 
   let isValid = true;
 
@@ -73,7 +74,7 @@ function getValues(event) {
   // Proceed with the rest of the function if inputs are valid
 
   let totalsum = hundreds + fifties + twenties + tens + fives + ones + quarters + dimes + nickels + pennies; 
-  let deposit = {amount: totalsum - 300};
+  let deposit = {amount: totalsum - setTill};
   let amountFives = fives / 5
   let amountTens = tens / 10
   let amountTwenties = twenties / 20
@@ -108,7 +109,7 @@ function getValues(event) {
   endingTill = endingTill.toFixed(2);
 
   part1.innerHTML = `TOTAL = $${totalsum.toFixed(2)}`;
-  part2.innerHTML = `DEPOSIT = $${Math.trunc(totalsum - 300)}`;
+  part2.innerHTML = `DEPOSIT = $${Math.trunc(totalsum - setTill)}`;
   part3.innerHTML = `ENDING TILL = $${endingTill}`;
   part4.innerHTML = `${depositHundreds || 0} &nbsp;x $100`;
   part5.innerHTML = `${depositFifties || 0} &nbsp;x $50`;
