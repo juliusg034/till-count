@@ -46,19 +46,19 @@
         
         <div class="input-field">
           <label for="number">25¢</label>
-          <input type="number" type="text" inputmode="decimal" pattern="[0-9]*" id="quarters"/>
+          <input type="number" type="text" inputmode="decimal" pattern="[0-9]*" class="bill-input"id="quarters" data-denomination=".25"/>
         </div>
         <div class="input-field">
           <label for="number">10¢</label>
-          <input type="number" type="text" inputmode="decimal" pattern="[0-9]*" id="dimes"/>
+          <input type="number" type="text" inputmode="decimal" pattern="[0-9]*" class="bill-input"id="dimes" data-denomination=".10"/>
         </div>
         <div class="input-field">
           <label for="number">5¢</label>
-          <input type="number" type="text" inputmode="decimal" pattern="[0-9]*" id="nickels"/>
+          <input type="number" type="text" inputmode="decimal" pattern="[0-9]*" class="bill-input"id="nickels" data-denomination=".05"/>
         </div>
         <div class="input-field">
           <label for="number">1¢</label>
-          <input type="number" type="text" inputmode="decimal" pattern="[0-9]*" id="pennies"/>
+          <input type="number" type="text" inputmode="decimal" pattern="[0-9]*" class="bill-input"id="pennies" data-denomination=".01"/>
         </div>
 
         <button onclick="getValues(event)" type="submit" id="btn">Refresh</button>

@@ -45,7 +45,7 @@ function getValues(event) {
   const inputs = document.querySelectorAll('.bill-input');
 
   inputs.forEach(input => {
-    const denomination = parseInt(input.getAttribute('data-denomination'));
+    const denomination = parseFloat(input.getAttribute('data-denomination'));
     const value = parseFloat(input.value);
 
     if (isNaN(value) || value % denomination !== 0) {
@@ -107,7 +107,7 @@ function getValues(event) {
   let endingTill = totalsum - Math.trunc(totalsum-300);
   endingTill = endingTill.toFixed(2);
 
-  part1.innerHTML = `TOTAL = $${totalsum}`;
+  part1.innerHTML = `TOTAL = $${totalsum.toFixed(2)}`;
   part2.innerHTML = `DEPOSIT = $${Math.trunc(totalsum - 300)}`;
   part3.innerHTML = `ENDING TILL = $${endingTill}`;
   part4.innerHTML = `${depositHundreds || 0} &nbsp;x $100`;
@@ -133,7 +133,7 @@ function getValues(event) {
   const p10 = document.getElementById('ending10');
   const p11 = document.getElementById('ending11');
 
-  p1.innerHTML = "Ending Till: ";
+  p1.innerHTML = "ENDING TILL: ";
   p2.innerHTML = `Hundreds: $${hundreds - depositHundreds * 100}`; 
   p3.innerHTML = `Fifties: $${fifties - depositFifties * 50}`; 
   p4.innerHTML = `Twenties: $${twenties - depositTwenties * 20}`; 

@@ -79,7 +79,7 @@ form {
 .deposit-amount {
   grid-row: 1/2;
   height: 400px;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 1.5;
   justify-self: center;
 }
@@ -111,6 +111,8 @@ form {
 
 #ending-till {
   grid-row: 2/3;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 
