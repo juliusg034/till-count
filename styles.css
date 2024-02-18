@@ -77,8 +77,7 @@ form {
 }
 
 .deposit-amount {
-  grid-row: 3/4;
-  grid-column: 3/4;
+  grid-row: 1/2;
   height: 400px;
   font-size: 24px;
   line-height: 1.5;
@@ -101,6 +100,18 @@ form {
   border-color: red;
 }
 
+.right-side {
+  height: 100%;
+  display: grid;
+  grid-template: 40% 60% / 1fr;
+  grid-row: 3/4;
+  grid-column: 3/4;
+}
+
+
+#ending-till {
+  grid-row: 2/3;
+}
 
 
 @media only screen and (max-width: 560px) {
