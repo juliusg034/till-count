@@ -35,7 +35,10 @@ function getValues(event) {
   const tens = parseFloat(document.getElementById('tens').value);
   const fives = parseFloat(document.getElementById('fives').value);
   const ones = parseFloat(document.getElementById('ones').value);
-  const coins = parseFloat(document.getElementById('coins').value);
+  const quarters = parseFloat(document.getElementById('quarters').value);
+  const dimes = parseFloat(document.getElementById('dimes').value);
+  const nickels = parseFloat(document.getElementById('nickels').value);
+  const pennies = parseFloat(document.getElementById('pennies').value);
 
   let isValid = true;
 
@@ -69,7 +72,7 @@ function getValues(event) {
 
   // Proceed with the rest of the function if inputs are valid
 
-  let totalsum = hundreds + fifties + twenties + tens + fives + ones + coins; 
+  let totalsum = hundreds + fifties + twenties + tens + fives + ones + quarters + dimes + nickels + pennies; 
   let deposit = {amount: totalsum - 300};
   let amountFives = fives / 5
   let amountTens = tens / 10
@@ -116,4 +119,30 @@ function getValues(event) {
 
   const depositList = document.getElementById('depositList');
   depositList.style.display = 'block';
+
+
+  const p1 = document.getElementById('ending1');
+  const p2 = document.getElementById('ending2');
+  const p3 = document.getElementById('ending3');
+  const p4 = document.getElementById('ending4');
+  const p5 = document.getElementById('ending5');
+  const p6 = document.getElementById('ending6');
+  const p7 = document.getElementById('ending7');
+  const p8 = document.getElementById('ending8');
+  const p9 = document.getElementById('ending9');
+  const p10 = document.getElementById('ending10');
+  const p11 = document.getElementById('ending11');
+
+  p1.innerHTML = "Ending Till: ";
+  p2.innerHTML = `Hundreds: $${hundreds - depositHundreds * 100}`; 
+  p3.innerHTML = `Fifties: $${fifties - depositFifties * 50}`; 
+  p4.innerHTML = `Twenties: $${twenties - depositTwenties * 20}`; 
+  p5.innerHTML = `Tens: $${tens - depositTens * 10}`; 
+  p6.innerHTML = `Fives: $${fives - depositFives * 5}`; 
+  p7.innerHTML = `Ones: $${ones - depositOnes }`; 
+  p8.innerHTML = `Quarters: $${quarters}`; 
+  p9.innerHTML = `Dimes: $${dimes}`; 
+  p10.innerHTML = `Nickels: $${nickels}`; 
+  p11.innerHTML = `Pennies: $${pennies}`; 
+
 }
