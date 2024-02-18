@@ -105,11 +105,14 @@ function getValues(event) {
     depositList.style.display = 'block'; 
     return 0;
   }
-  let endingTill = totalsum - Math.trunc(totalsum-300);
+
+  let finalDeposit = (totalsum - setTill).toFixed(2);
+
+  let endingTill = totalsum - finalDeposit;
   endingTill = endingTill.toFixed(2);
 
   part1.innerHTML = `TOTAL = $${totalsum.toFixed(2)}`;
-  part2.innerHTML = `DEPOSIT = $${Math.trunc(totalsum - setTill)}`;
+  part2.innerHTML = `DEPOSIT = $${finalDeposit}`;
   part3.innerHTML = `ENDING TILL = $${endingTill}`;
   part4.innerHTML = `${depositHundreds || 0} &nbsp;x $100`;
   part5.innerHTML = `${depositFifties || 0} &nbsp;x $50`;
