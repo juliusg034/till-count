@@ -50,6 +50,7 @@ footer > a {
   display: grid;
   grid-template: 10% 20% 60% 10% / 10% 40% 40% 10%;
   justify-items: center;
+  overflow-x: hidden;
 }
 
 .title {
