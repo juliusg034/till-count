@@ -13,7 +13,6 @@ html {
 }
 body {
   position: relative;
-  overflow-x: hidden;
 }
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -53,7 +52,6 @@ footer > a {
   display: grid;
   grid-template: 10% 20% 60% 10% / 10% 40% 40% 10%;
   justify-items: center;
-  overflow-x: hidden;
 }
 
 .title {
